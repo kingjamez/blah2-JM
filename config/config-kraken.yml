@@ -1,9 +1,9 @@
 capture:
   fs: 2000000
-  fc: 204640000
+  fc: 92500000
   device:
     type: "Kraken"
-    gain: [15.0, 15.0]
+    gain: [25.0, 25.0]
     array: 
       x: [0, 0]
       y: [0, 0]
@@ -69,15 +69,15 @@ truth:
 
 location:
   rx:
-    latitude: -34.9286
-    longitude: 138.5999
+    latitude: 39.0790096
+    longitude: -77.5526944
     altitude: 50
-    name: "Adelaide"
+    name: "Leesburg"
   tx:
-    latitude: -34.9810
-    longitude: 138.7081
+    latitude: 38.9562234
+    longitude: -78.0240621
     altitude: 750
-    name: "Mount Lofty"
+    name: "92.5 Radio Tower"
 
 save:
   iq: true

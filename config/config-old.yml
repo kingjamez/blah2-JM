@@ -1,16 +1,18 @@
 capture:
   fs: 2000000
-  fc: 515000000
+  fc: 204640000
   device:
-    type: "Usrp"
-    address: "localhost"
-    subdev: "A:A A:B"
-    antenna: ["RX2", "RX2"]
-    gain: [50.0, 50.0]
+    type: "RspDuo"
+    agcSetPoint: -60
+    bandwidthNumber: 50
+    gainReduction: 40
+    lnaState: 4
+    dabNotch: false
+    rfNotch: false
   replay:
     state: false
     loop: true
-    file: '/opt/blah2/replay/file.iq'
+    file: '/opt/blah2/replay/file.rspduo'
 
 process:
   data:
@@ -58,8 +60,8 @@ network:
 truth:
   adsb:
     enabled: true
-    tar1090: 'http://localhost/tar1090/'
-    adsb2dd: 'http://localhost:49155/api/dd?rx=39.07946,-77.55262,100&tx=38.96397,-77.10479,500&fc=515&server=http://10.10.5.138/tar1090'
+    tar1090: 'adsb.30hours.dev'
+    adsb2dd: 'adsb2dd.30hours.dev'
   ais:
     enabled: false
     ip: 0.0.0.0
@@ -67,19 +69,19 @@ truth:
 
 location:
   rx:
-    latitude: 39.0790096
-    longitude: -77.5526944
-    altitude: 100
-    name: "Leesburg"
+    latitude: -34.9286
+    longitude: 138.5999
+    altitude: 50
+    name: "Adelaide"
   tx:
-    latitude: 39.01015
-    longitude: -76.60811
-    altitude: 1000
-    name: "Annapolis"
+    latitude: -34.9810
+    longitude: 138.7081
+    altitude: 750
+    name: "Mount Lofty"
 
 save:
   iq: true
   map: false
-  detection: true
-  timing: true
+  detection: false
+  timing: false
   path: "/blah2/save/"
